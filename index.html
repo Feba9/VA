@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Virtual Assistant - Beata Fuisz</title>
+   <link rel="stylesheet" href="style.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+   <!-- Hamburger menu -->
+   <nav>
+      <ul class="main-menu">
+         <li><a href="#about-me">About Me</a></li> 
+         <li><a href="#about-me">Why Me?</a></li> <!-- Módosítva, hogy az About Me szekcióra ugorjon -->
+         <li><a href="#services">Services</a></li>
+         <li><a href="#contact">Contact</a></li>
+         <li class="menu-icon">
+            <a href="#">
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+                  <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+               </svg>
+            </a>
+         </li>
+      </ul>
+   </nav>
+
+   <!-- First section -->
+   <section class="firstPage">
+      <div class="intro-content">
+         <h1> Beata Fuisz</h1>
+         <h2 class="highlight-text">Your success is my goal – together we achieve the best results!</h2>
+        
+      </div>
+   </section>
+
+
+<!-- About me and Why me combined section -->
+<section id="about-me" class="about-why-section"> <!-- Ensure this ID matches the link -->
+  <div class="about-why-container">
+    <div id="about-me" class="about-why-half aboutMe"> <!-- This ID should match -->
+      <h1 class="fading-1">About Me</h1>
+      <p> I'm Beata Fuisz, a dedicated virtual assistant with a passion for helping businesses and entrepreneurs thrive. With my background in customer service and hospitality, combined with my technical skills in front-end development, I bring a unique blend of expertise to support your success.</p>
+      <p>My journey has equipped me with strong organizational abilities, excellent communication skills, and a keen eye for detail. I'm committed to delivering high-quality work and building long-lasting professional relationships.</p>
+      <p>When I'm not assisting clients, you can find me exploring new technologies, enjoying nature walks, or indulging in my love for photography. I believe in continuous learning and staying updated with the latest industry trends to provide the best service to my clients.</p>
+    </div>
+    <div id="why-me" class="about-why-half whyMe"> <!-- Itt van a Why Me szekció -->
+      <h1 class="fading-1">Why Me?</h1>
+      <p>Choosing the right virtual assistant is crucial for your success. Here's why I'm the perfect fit for your needs:</p>
+      <ul>
+        <li>Dedicated and passionate about helping you achieve your goals</li>
+        <li>Extensive experience in customer service and hospitality</li>
+        <li>Strong technical skills in front-end development and social media management</li>
+        <li>Excellent time management and organizational skills</li>
+        <li>Adaptable and quick learner, always staying up-to-date with the latest trends</li>
+        <li>Committed to clear communication and meeting deadlines</li>
+        <li>Creative problem-solver with a keen eye for detail</li>
+      </ul>
+      <p>By choosing me as your virtual assistant, you're not just getting a service provider – you're gaining a dedicated partner in your success journey.</p>
+    </div>
+  </div>
+</section>
+
+
+   <!-- Services Section -->
+   <section id="services" class="services-section">
+      <h1> Services</h1>
+      <div class="services-container">
+          <div class="service-box">
+              <div class="icon">
+                  &#128197;
+              </div>
+              <h2>Calendar, Scheduling, and Administrative Management</h2>
+              <ul>
+              <li>Streamline your operations with comprehensive support. I manage your calendar, handle scheduling and meeting coordination, and oversee administrative tasks like report preparation and document organization to keep everything running smoothly. </li>
+            </ul>
+
+          </div>
+          <div class="service-box">
+              <div class="icon">
+               🤝
+              </div>
+              <h2>Customer Support</h2>
+              <ul>
+              <li>I provide timely, professional support, ensuring positive client interactions and strong relationships. Clients can reach me anytime via email or WhatsApp, so I’m always available.</li>
+            </ul>
+          </div>
+          <div class="service-box">
+              <div class="icon">
+                  &#127758;
+              </div>
+              <h2>Social Media Management</h2>
+              <ul>
+                  <li>Elevate your online presence with expert social media management. I handle everything from content creation and scheduling to engagement and analytics, ensuring your brand stands out and connects effectively with your audience.</li>
+              </ul>
+          </div>
+          <div class="service-box">
+              <div class="icon">
+                  &#128221;
+              </div>
+              <h2>Time Management and Organization</h2>
+              <ul>
+                  <li>I prioritize tasks and manage workloads effectively. I focus on developing efficient workflows to enhance productivity. I set clear goals and strive to achieve them. Additionally, I track my time to optimize productivity.</li>
+              </ul>
+          </div>
+          <div class="service-box">
+              <div class="icon">
+               ✉️
+              </div>
+              <h2>Email and Communication Management</h2>
+              <ul>
+                  <li>Avoid communication chaos with my email management services. I'll prioritize and respond to messages, allowing you to focus on your core activities and decision-making.</li>
+              </ul>
+          </div>
+          <div class="service-box">
+              <div class="icon">
+               👩‍💻
+              </div>
+              <h2>Personal Assistance</h2>
+              <ul>
+                  <li>I offer personal assistance with tasks such as booking appointments, managing personal errands, and handling day-to-day activities to simplify your life.</li>
+              </ul>
+          </div>
+      </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h1>Contact</h1>
+    <div class="contact-buttons">
+        <button class="contact-button" onclick="location.href='mailto:assistbyb@gmail.com'">
+            <i class="fa-regular fa-envelope"></i> <span style="margin-left: 5px;">assistbyb@gmail.com</span>
+        </button>
+        <button class="contact-button" onclick="location.href='https://www.linkedin.com/in/beata-fuisz'">
+            <i class="fa-brands fa-linkedin large-icon"></i>
+        </button>
+        <button class="contact-button" onclick="window.open('./assets/Beata Fuisz CV.pdf', '_blank')">
+            OPEN CV
+        </button>
+    </div>
+    <div class="contact-footer">I look forward to hearing from you and discussing how we can work together.</div>
+  </div>
+ </section>
+
+
+   <script src="index.js"></script>
+   </script>
+
+
+</body>
+</html>

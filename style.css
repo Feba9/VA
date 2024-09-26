@@ -1,0 +1,458 @@
+/* Reset and General Styles */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  background-color: rgb(245, 241, 241);
+  font-family: "Roboto", sans-serif;
+}
+
+/* Navigation */
+nav {
+  background-color: rgb(206, 206, 206);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-menu {
+  display: flex; /* Flexbox a menü elemek elrendezéséhez */
+  justify-content: flex-end; /* Jobbra igazítás */
+  align-items: center; /* Középre igazítás */
+  list-style: none; /* Lista stílus eltávolítása */
+}
+
+.menu-icon {
+  display: none; /* Alapértelmezés szerint elrejtve */
+}
+
+/* Kisebb képernyőkön */
+@media (max-width: 768px) {
+  .main-menu {
+    display: none; /* Alapértelmezés szerint elrejtve */
+  }
+  .menu-icon {
+    display: block; /* Megjelenik, ha kisebb a képernyő */
+  }
+}
+
+nav ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+nav li {
+  height: 50px;
+}
+nav a {
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
+  height: 100%;
+}
+nav a:hover {
+  background-color: white;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  box-shadow: -10px 0 10px black;
+  display: none;
+  flex-direction: column;
+}
+.sidebar li, .sidebar a {
+  width: 100%;
+}
+.main-menu.hidden {
+  display: none;
+}
+
+/* Button Styles */
+button {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  border: none;
+  font-size: 10px;
+  transition: color, transform, background-color 0.3s;
+  outline: none;
+  border-radius: 3px;
+  margin: 15px;
+  padding: 15px 30px;
+  background-color: transparent;
+  color: #f2f1f1;
+  border: 3px solid transparent;
+}
+button:hover {
+  color: #f0f0f0;
+  transform: scale(1.1);
+}
+button::before, button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  z-index: 1;
+}
+button::before {
+  border: 3px solid #666869;
+  transition: opacity, border 0.3s;
+}
+button::after {
+  border: 3px solid #f0f0f0;
+  opacity: 0;
+  transform: scaleX(1.1) scaleY(1.1);
+  transition: transform, opacity 0.3s;
+}
+button:hover::before,
+button:hover::after {
+  opacity: 1;
+  transform: scaleX(1) scaleY(1);
+}
+
+/* First Page Section */
+.firstPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 5px;
+  margin-top: 5px;
+  background: url('assets/desktop.jpg') center / cover no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+.firstPage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  background-attachment: fixed;
+  filter: blur(3px);
+  opacity: 0.3;
+}
+.intro-content {
+  position: relative;
+  z-index: 1;
+}
+.firstPage h1, .firstPage h2 {
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: color 0.3s ease;
+}
+.firstPage h1 {
+  color: #fff;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+.firstPage h2 {
+  color: #f0f0f0;
+  font-style: italic;
+  font-size: 1.5em;
+}
+.firstPage h1:hover, .firstPage h2:hover {
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+
+/* About Me Section */
+.aboutMe {
+   padding: 60px 20px;
+   text-align: center; 
+  background: radial-gradient(circle, rgb(176, 208, 185) 6%,rgb(45, 44, 44) 85%) important;  
+ }
+ 
+ .aboutMe h1 {
+   font-size: 36px;
+   margin-bottom: 20px;
+   text-align: center;
+   position: relative;
+ }
+ 
+ .aboutMe p {
+   font-size: 18px;
+   line-height: 1.8;
+   max-width: 800px;
+   margin: 0 auto; 
+   color: #080707;
+ }
+
+ .block-effect:hover::after {
+   width: 100%;
+ }
+
+ .fading-1 {
+   background: 
+      linear-gradient(90deg, transparent, black, transparent) 
+     bottom /var(--d, 0) 3px no-repeat;
+   transition: 0.5s;
+ }
+ .fading-1:hover {
+   --d: 100%;
+ }
+
+/* Why me section */
+.whyMe {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.whyMe > * {
+  max-width: 80%;
+}
+
+/* Combined About Me and Why Me Section */
+.about-why-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.about-why-container {
+  display: flex;
+  height: 100%;
+}
+
+.about-why-half {
+  flex: 1;
+  width: 50%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 50px;
+  transition: all 1.5s ease;
+  position: relative;
+  background: radial-gradient(circle, rgb(176, 208, 185) 6%,rgb(45, 44, 44) 85%);
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-why-half > * {
+  max-width: 80%;
+  transition: all 0.5s ease;
+}
+
+.about-why-half h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 10px;
+}
+
+.about-why-half p {
+  margin-bottom: 15px;
+}
+
+.about-why-half ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.about-why-half li {
+  margin-bottom: 10px;
+}
+
+.about-why-half:hover {
+  flex: 2; 
+}
+
+.about-why-half:not(:hover) {
+  flex: 0.8; 
+}
+
+.about-why-container:hover .about-why-half:not(:hover) > * {
+  opacity: 0.3;
+  transform: scale(0.9);
+}
+
+.about-why-half:hover > * {
+  transform: scale(1.1); 
+}
+
+/* Hide scrollbars but keep functionality */
+.about-why-half {
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+.about-why-half::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Services Section */
+.services-section {
+  padding: 55px 20px;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+.services-section h1 {
+  font-size: 38px;
+  margin-bottom: 25px;
+  margin-top: 1px; /* Feljebb helyezés */
+  text-align: center;
+}
+
+section {
+  background: rgb(165,201,175);
+  background: radial-gradient(circle, rgb(176, 208, 185) 6%,rgb(45, 44, 44) 85%);
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-content: flex-start;
+}
+
+.service-box {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border-radius: 15px;
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 15px rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.15), -12px -12px 20px rgba(255, 255, 255, 0.95);
+}
+
+.service-box .icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.service-box h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.service-box ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-box ul li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .service-box {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .service-box {
+    width: 100%;
+  }
+}
+
+.contact-section {
+  min-height: 55vh;
+  font-size: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Középre helyezés */
+  align-items: center; /* Középre helyezés */
+  padding: 50px 20px;
+  section {
+    background: rgb(165,201,175);
+    background: radial-gradient(circle, rgb(176, 208, 185) 6%,rgb(45, 44, 44) 85%);
+  }
+
+.contact-buttons {
+  display: flex;
+  flex-direction: column; /* Gombok egymás alá helyezése */
+  align-items: center; /* Középre igazítás */
+  margin-top: 20px; /* Felső margó a gomboknak */
+}
+
+.contact-button {
+  margin: 10px 0; /* Közötti távolság a gombok között */
+  width: 200px; /* Gombok szélessége */
+  font-family: 'Roboto', sans-serif; /* Ugyanaz a betűtípus, mint a First Page h1 */
+  text-transform: uppercase;
+  position: relative;
+  border: none;
+  font-size: 17px; /* 1px-al nagyobb, mint korábban (16px -> 17px) */
+  transition: color 0.3s, transform 0.3s, background-color 0.3s;
+  outline: none;
+  border-radius: 3px;
+  padding: 15px 20px;
+  border: 3px solid transparent;
+  background-color: transparent;
+  color: #000000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Középre igazítás */
+  width: 100%;
+  margin-bottom: 5px; /* Csökkentett margó a h1-hez képest */
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.contact-button:hover {
+  background-color: transparent;
+  color: #1a1a1a;
+  transform: scale(1.05);
+}
+
+.contact-footer {
+  font-size: 18px; /* Footer betűmérete 21px */
+  text-align: center;
+  margin-top: 10px; /* Igény szerint állítható */
+  color: #120d0d;
+}
+
+/* Kisebb képernyőkön */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none; /* Alapértelmezés szerint elrejtve */
+    }
+    .hamburger {
+        display: block; /* Megjelenik, ha kisebb a képernyő */
+    }
+}
+
+
+
+
+
